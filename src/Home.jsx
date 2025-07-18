@@ -25,7 +25,7 @@ export default function Home() {
       <section className="p-6 max-w-4xl mx-auto">
         <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
         <form
-          name="contact-form"
+          name="contact"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -33,7 +33,7 @@ export default function Home() {
           encType="multipart/form-data"
           className="space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact-form" />
+          <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
           <input
             type="text"
