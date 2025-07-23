@@ -25,7 +25,7 @@ export default function Home() {
       <section className="p-6 max-w-4xl mx-auto">
         <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
         <form
-          name="contact"
+          name="contact-form"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -33,40 +33,13 @@ export default function Home() {
           encType="multipart/form-data"
           className="space-y-4"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact-form" />
           <input type="hidden" name="bot-field" />
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            className="w-full p-2 border border-gray-300 rounded"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="w-full p-2 border border-gray-300 rounded"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            required
-            className="w-full p-2 border border-gray-300 rounded"
-          ></textarea>
-          <input
-            type="file"
-            name="file"
-            accept=".pdf,.doc,.docx"
-            className="w-full"
-          />
-          <button
-            type="submit"
-            className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Submit
-          </button>
+          <input type="text" name="name" placeholder="Your Name" required className="w-full p-2 border border-gray-300 rounded" />
+          <input type="email" name="email" placeholder="Your Email" required className="w-full p-2 border border-gray-300 rounded" />
+          <textarea name="message" placeholder="Your Message" required className="w-full p-2 border border-gray-300 rounded"></textarea>
+          <input type="file" name="file" accept=".pdf,.doc,.docx" className="w-full" />
+          <button type="submit" className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
         </form>
       </section>
 
