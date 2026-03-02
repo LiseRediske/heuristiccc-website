@@ -1,127 +1,250 @@
 export default function Home() {
+  const services = [
+    {
+      title: "AI Automation Implementation",
+      desc: "Design and deploy structured AI workflows with documentation, operational controls, and measurable outcomes."
+    },
+    {
+      title: "AI Knowledge Systems (RAG)",
+      desc: "Vectorized document intelligence pipelines delivering grounded answers tied to your internal sources."
+    },
+    {
+      title: "AI Agents & Tool Integration",
+      desc: "Tool-using agents with guardrails, human-in-the-loop approvals, and audit-ready traces."
+    },
+    {
+      title: "Governance & Risk Advisory",
+      desc: "Policy-aligned AI adoption with accountability, access controls, and operational risk frameworks."
+    }
+  ];
+
+  const outcomes = [
+    {
+      title: "Automation that holds up in production",
+      desc: "Replace repetitive workflows with systems designed for reliability, traceability, and ROI reporting."
+    },
+    {
+      title: "Grounded intelligence, not guesses",
+      desc: "RAG architectures that keep outputs anchored to your documents, policies, and approved knowledge."
+    },
+    {
+      title: "Governance built in",
+      desc: "Roles, approvals, and risk controls embedded directly into the operating system—not bolted on."
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "What does a typical engagement look like?",
+      a: "We start with an objective and a current-state map, then define success criteria, build a pilot, harden it (monitoring, access controls, QA), and deploy."
+    },
+    {
+      q: "Do you work with existing tools (n8n, CRMs, Google Workspace, Microsoft 365)?",
+      a: "Yes. We integrate with your stack and standardize inputs/outputs so systems are maintainable by your team."
+    },
+    {
+      q: "How do you control hallucinations and risk?",
+      a: "Source-grounded retrieval, constrained tool use, validation steps, and human approval loops where appropriate. We design for auditability."
+    },
+    {
+      q: "Can you provide a white paper before a call?",
+      a: "Yes. Request it via the form and we’ll send the current edition."
+    }
+  ];
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
-
       {/* NAVBAR */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-          <div>
-            <h1 className="text-xl font-bold tracking-tight">
+      <header className="bg-white/90 backdrop-blur border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+          <div className="leading-tight">
+            <h1 className="text-sm sm:text-base font-semibold tracking-tight">
               Heuristic Consulting Corporation
             </h1>
             <p className="text-xs text-gray-500">
               AI Systems Architecture & Automation
             </p>
           </div>
-          <a
-            href="#contact"
-            className="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-gray-800 transition"
-          >
-            Strategy Call
-          </a>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="#whitepaper"
+              className="hidden sm:inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition"
+            >
+              White Paper
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-md bg-gray-900 text-white px-4 py-2 text-sm font-semibold hover:bg-gray-800 transition"
+            >
+              Strategy Call
+            </a>
+          </div>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white py-28">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold leading-tight mb-6">
-            Build AI Systems That Operate in Production
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-            We architect and deploy LLM-powered systems, retrieval frameworks,
-            and intelligent automation pipelines that replace manual work and
-            produce measurable operational leverage.
-          </p>
-          <div className="flex justify-center gap-4">
-            <a
-              href="#contact"
-              className="bg-blue-600 px-8 py-4 rounded-md font-semibold hover:bg-blue-500 transition"
-            >
-              Schedule a Strategy Discussion
-            </a>
-            <a
-              href="#whitepaper"
-              className="border border-gray-500 px-8 py-4 rounded-md hover:bg-gray-800 transition"
-            >
-              View White Paper
-            </a>
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-white blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-blue-500 blur-3xl" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+          <div className="max-w-3xl">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-gray-200/90 bg-white/10 border border-white/10 rounded-full px-3 py-1">
+              Production-first AI delivery
+              <span className="h-1 w-1 rounded-full bg-gray-300" />
+              Architecture • Automation • Governance
+            </p>
+
+            <h2 className="mt-6 text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
+              Build AI systems that operate in production.
+            </h2>
+
+            <p className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl">
+              We architect and deploy LLM-powered systems, retrieval frameworks, and automation pipelines
+              that replace manual work and produce measurable operational leverage.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href="#contact"
+                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Schedule a strategy discussion
+              </a>
+              <a
+                href="#services"
+                className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
+              >
+                See capabilities
+              </a>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-200/90">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="font-semibold text-white">Reliable automation</p>
+                <p className="mt-1 text-gray-200/80">Designed for uptime and traceability</p>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="font-semibold text-white">Grounded outputs</p>
+                <p className="mt-1 text-gray-200/80">RAG tied to your internal sources</p>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="font-semibold text-white">Risk controls</p>
+                <p className="mt-1 text-gray-200/80">Approvals, roles, governance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF / POSITIONING */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid gap-6 md:grid-cols-3 items-center">
+            <div className="md:col-span-2">
+              <h3 className="text-xl sm:text-2xl font-semibold tracking-tight">
+                For teams that need AI to work under real operational constraints.
+              </h3>
+              <p className="mt-2 text-gray-600">
+                If your environment requires approvals, audit trails, role controls, and repeatable delivery — we build for that.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-3 text-center">
+              <div className="rounded-lg bg-gray-50 border border-gray-200 p-4">
+                <p className="text-xs text-gray-500">Focus</p>
+                <p className="mt-1 font-semibold">Production</p>
+              </div>
+              <div className="rounded-lg bg-gray-50 border border-gray-200 p-4">
+                <p className="text-xs text-gray-500">Model</p>
+                <p className="mt-1 font-semibold">Grounded</p>
+              </div>
+              <div className="rounded-lg bg-gray-50 border border-gray-200 p-4">
+                <p className="text-xs text-gray-500">Control</p>
+                <p className="mt-1 font-semibold">Governed</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* OUTCOMES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-3xl font-semibold text-center mb-16">
-            Production-Grade Outcomes
-          </h3>
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              Production-grade outcomes
+            </h3>
+            <p className="mt-3 text-gray-600">
+              Systems that reduce manual work, improve speed, and hold up under audit and operations.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div>
-              <h4 className="text-xl font-semibold mb-3">
-                Automation at Scale
-              </h4>
-              <p className="text-gray-600">
-                Replace repetitive workflows with structured AI pipelines
-                designed for reliability, traceability, and measurable ROI.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-semibold mb-3">
-                Grounded Intelligence
-              </h4>
-              <p className="text-gray-600">
-                Retrieval-Augmented Generation systems that ensure outputs are
-                based on your internal documents and policies—not hallucinations.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-semibold mb-3">
-                Governance Built In
-              </h4>
-              <p className="text-gray-600">
-                Role controls, approval loops, and risk frameworks embedded
-                directly into every deployment.
-              </p>
-            </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {outcomes.map((o, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-6"
+              >
+                <h4 className="text-lg font-semibold">{o.title}</h4>
+                <p className="mt-2 text-gray-600">{o.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="bg-gray-100 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-3xl font-semibold text-center mb-16">
-            Core Capabilities
-          </h3>
+      <section id="services" className="bg-gray-100 py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              Core capabilities
+            </h3>
+            <p className="mt-3 text-gray-600">
+              Architecture, implementation, and operational hardening — delivered as a complete system.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {services.map((service, i) => (
+              <div
+                key={i}
+                className="bg-white p-7 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <h4 className="text-lg font-semibold">{service.title}</h4>
+                <p className="mt-2 text-gray-600">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              How we deliver
+            </h3>
+            <p className="mt-3 text-gray-600">
+              A repeatable engagement model built for speed, clarity, and deployment.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
             {[
-              {
-                title: "AI Automation Implementation",
-                desc: "Design and deploy structured AI workflows with documentation and operational controls."
-              },
-              {
-                title: "AI Knowledge Systems (RAG)",
-                desc: "Vectorized document intelligence pipelines delivering grounded responses."
-              },
-              {
-                title: "AI Agents & Tool Integration",
-                desc: "Tool-using agents with planning loops and human-in-the-loop safeguards."
-              },
-              {
-                title: "Governance & Risk Advisory",
-                desc: "Policy-aligned AI adoption with measurable accountability frameworks."
-              }
-            ].map((service, i) => (
-              <div key={i} className="bg-white p-8 rounded-lg shadow-md">
-                <h4 className="text-lg font-semibold mb-3">
-                  {service.title}
-                </h4>
-                <p className="text-gray-600">{service.desc}</p>
+              { step: "01", title: "Define", desc: "Objective, constraints, success metrics, and risk posture." },
+              { step: "02", title: "Design", desc: "Architecture, data flows, tool integration, controls." },
+              { step: "03", title: "Build", desc: "Pilot implementation with validation and approval loops." },
+              { step: "04", title: "Deploy", desc: "Harden, monitor, document, and hand off operations." }
+            ].map((s, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <p className="text-xs font-semibold text-gray-500">{s.step}</p>
+                <h4 className="mt-2 font-semibold">{s.title}</h4>
+                <p className="mt-2 text-gray-600 text-sm">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -129,81 +252,148 @@ export default function Home() {
       </section>
 
       {/* WHITE PAPER */}
-      <section id="whitepaper" className="py-24 bg-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h3 className="text-3xl font-semibold mb-6">
-            AI Systems Architecture White Paper
-          </h3>
-          <p className="text-gray-600 mb-8">
-            A structured guide covering LLM foundations, RAG systems, agent design,
-            context engineering, and governance frameworks for professional firms.
-          </p>
-          <a
-            href="#contact"
-            className="bg-gray-900 text-white px-8 py-4 rounded-md hover:bg-gray-800 transition"
-          >
-            Request White Paper
-          </a>
+      <section id="whitepaper" className="py-16 sm:py-20 bg-white border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8 sm:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+                AI Systems Architecture White Paper
+              </h3>
+              <p className="mt-3 text-gray-600">
+                A structured guide covering LLM foundations, RAG systems, agent design, context engineering,
+                and governance frameworks for professional firms.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="#contact"
+                className="inline-flex justify-center rounded-md bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition"
+              >
+                Request white paper
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              FAQ
+            </h3>
+            <p className="mt-3 text-gray-600">
+              Quick answers to the questions that determine fit.
+            </p>
+          </div>
+
+          <div className="mt-12 max-w-3xl mx-auto space-y-4">
+            {faqs.map((f, i) => (
+              <details
+                key={i}
+                className="group rounded-xl border border-gray-200 bg-gray-50 p-6"
+              >
+                <summary className="cursor-pointer list-none font-semibold flex items-center justify-between">
+                  <span>{f.q}</span>
+                  <span className="ml-4 text-gray-500 group-open:rotate-45 transition">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600">{f.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-24 bg-gray-950 text-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h3 className="text-3xl font-semibold text-center mb-12">
-            Start the Conversation
-          </h3>
+      <section id="contact" className="py-16 sm:py-20 bg-gray-950 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              Start the conversation
+            </h3>
+            <p className="mt-3 text-gray-300">
+              Send the objective and constraints. We’ll respond with next steps and an initial direction.
+            </p>
+          </div>
 
-          <form
-            name="contact-form"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            action="/success"
-            className="space-y-6"
-          >
-            <input type="hidden" name="form-name" value="contact-form" />
-            <input type="hidden" name="bot-field" />
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              className="w-full p-4 rounded-md text-black"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="w-full p-4 rounded-md text-black"
-            />
-
-            <textarea
-              name="message"
-              placeholder="Describe your AI objective"
-              required
-              className="w-full p-4 rounded-md text-black"
-            ></textarea>
-
-            <button
-              type="submit"
-              className="w-full bg-blue-600 py-4 rounded-md font-semibold hover:bg-blue-500 transition"
+          <div className="mt-12 max-w-2xl mx-auto">
+            <form
+              name="contact-form"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/success"
+              className="space-y-5"
             >
-              Submit
-            </button>
-          </form>
+              <input type="hidden" name="form-name" value="contact-form" />
+              <input type="hidden" name="bot-field" />
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                    className="w-full rounded-md bg-white text-gray-900 p-3 outline-none ring-1 ring-transparent focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-200 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    required
+                    className="w-full rounded-md bg-white text-gray-900 p-3 outline-none ring-1 ring-transparent focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-200 mb-2">
+                  Objective
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="What do you want the AI system to do? What tools/data does it need? Any approvals/compliance requirements?"
+                  required
+                  rows={6}
+                  className="w-full rounded-md bg-white text-gray-900 p-3 outline-none ring-1 ring-transparent focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full rounded-md bg-blue-600 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Submit
+              </button>
+
+              <p className="text-xs text-gray-400 text-center">
+                Prefer email? Use <span className="text-gray-200 font-medium">lise@heuristiccc.com</span>
+              </p>
+            </form>
+          </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-black text-gray-400 text-center py-8 text-sm">
-        <p>612-404-6281 | info@heuristiccc.com</p>
-        <p className="mt-2">
-          © {new Date().getFullYear()} Heuristic Consulting Corporation
-        </p>
+      <footer className="bg-black text-gray-400 text-center py-10 text-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="font-medium text-gray-300">612-404-6281</p>
+          <p className="mt-1">lise@heuristiccc.com</p>
+          <p className="mt-4">
+            © {new Date().getFullYear()} Heuristic Consulting Corporation
+          </p>
+        </div>
       </footer>
     </main>
   );
