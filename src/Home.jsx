@@ -335,13 +335,29 @@ export default function Home() {
             className="space-y-4"
           >
             <input type="hidden" name="form-name" value="framework-download" />
+            <input type="hidden" name="redirect" value="/framework-download" />
             <input type="hidden" name="bot-field" />
 
             <input
               type="text"
-              name="name"
-              placeholder="Name"
+              name="first_name"
+              placeholder="First Name"
               required
+              className="w-full p-4 border rounded"
+            />
+
+            <input
+              type="text"
+              name="last_name"
+              placeholder="Last Name"
+              required
+              className="w-full p-4 border rounded"
+            />
+
+            <input
+              type="text"
+              name="company"
+              placeholder="Company"
               className="w-full p-4 border rounded"
             />
 
