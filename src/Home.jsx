@@ -63,15 +63,15 @@ export default function Home() {
               alt="Heuristic Consulting Corporation Logo"
               className="h-10 w-auto"
             />
-          <div className="leading-tight">
-            <p className="text-sm font-semibold tracking-tight">
-              Heuristic Consulting
-            </p>
-            <p className="text-xs text-gray-500">
-              AI Systems Architecture & Automation
-            </p>
+            <div className="leading-tight">
+              <p className="text-sm font-semibold tracking-tight">
+                Heuristic Consulting
+              </p>
+              <p className="text-xs text-gray-500">
+                AI Systems Architecture & Automation
+              </p>
+            </div>
           </div>
-        </div>
 
           <div className="flex items-center gap-3">
             <a
@@ -309,6 +309,57 @@ export default function Home() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FRAMEWORK DOWNLOAD (EMAIL GATE) */}
+      <section id="framework" className="py-24 bg-white border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-semibold mb-6">
+            AI Automation Implementation Framework
+          </h3>
+
+          <p className="text-gray-600 mb-2">
+            A 3-page worksheet that helps teams evaluate whether a workflow is a strong candidate for AI automation.
+          </p>
+          <p className="text-gray-500 mb-8 text-sm">
+            Takes less than 3 minutes.
+          </p>
+
+          <form
+            name="framework-download"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/framework-download"
+            className="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="framework-download" />
+            <input type="hidden" name="bot-field" />
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              className="w-full p-4 border rounded"
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="w-full p-4 border rounded"
+            />
+
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-8 py-4 rounded"
+            >
+              Download Framework
+            </button>
+          </form>
         </div>
       </section>
 

@@ -2,10 +2,15 @@
   command = "npm ci && npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "20"
+
 [[redirects]]
   from = "/success"
   to = "/success.html"
   status = 200
 
-[build.environment]
-  NODE_VERSION = "20"
+[[redirects]]
+  from = "/framework-download"
+  to = "/framework-download.html"
+  status = 200
