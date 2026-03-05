@@ -114,10 +114,12 @@ export default function Home() {
               White Paper
             </a>
             <a
-              href="#contact"
+              href="https://calendly.com/lise-heuristiccc/30min"
+              target="_blank"
+              rel="noopener"
               className="inline-flex items-center rounded-md bg-gray-900 text-white px-4 py-2 text-sm font-semibold hover:bg-gray-800 transition"
             >
-              Strategy Call
+              Schedule a Strategy Call
             </a>
           </div>
         </div>
