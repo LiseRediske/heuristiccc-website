@@ -125,6 +125,15 @@
     <div class="card">
       <h1>Framework ready.</h1>
 
+      <p style="margin-top:14px;font-size:18px;font-weight:600;">
+        What workflow are you considering automating?
+      </p>
+
+      <p class="fine">
+        If you already have one in mind, a quick strategy discussion can determine whether it is a strong AI automation
+        candidate.
+      </p>
+
       <p>Your download is below. This worksheet helps you qualify a workflow for automation in under 3 minutes.</p>
 
       <p style="margin-top:16px; font-weight:600;">
@@ -133,13 +142,18 @@
         Step 3: Book a strategy call to map implementation
       </p>
       <div class="btnrow">
-        <a class="btn primary" href="/AI_Automation_Implementation_Framework.pdf" download>
+        <a id="download-btn" class="btn primary" href="/AI_Automation_Implementation_Framework.pdf" download>
           Download the PDF
         </a>
         <a class="btn secondary" href="/#contact">
-          Book a Strategy Call
+          Request a Strategy Call
         </a>
       </div>
+
+      <p class="fine" style="margin-top:12px;">
+        If the download didn’t start automatically, click the button above or
+        <a href="/AI_Automation_Implementation_Framework.pdf">download it here</a>.
+      </p>
 
       <div class="divider"></div>
 
@@ -160,6 +174,14 @@
       Need help immediately? Email <strong>lise@heuristiccc.com</strong> or call <strong>612-404-6281</strong>.
     </p>
   </div>
+  <script>
+    window.addEventListener("load", function () {
+      var btn = document.getElementById("download-btn");
+      if (btn) {
+        btn.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  </script>
 </body>
 
 </html>
