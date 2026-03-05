@@ -145,6 +145,12 @@ export default function Home() {
               that replace manual work and produce measurable operational leverage.
             </p>
 
+            <p className="mt-4 text-base text-gray-300 max-w-2xl">
+              Heuristic Consulting designs and deploys production-grade AI automation systems, including
+              retrieval-augmented generation (RAG), AI agents, and workflow automation pipelines for
+              organizations that require governance, traceability, and measurable ROI.
+            </p>
+
             <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#contact"
@@ -257,6 +263,32 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* WHAT IS AI AUTOMATION */}
+      <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-6">
+
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
+            What is AI Automation?
+          </h3>
+
+          <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+            AI automation combines large language models, structured workflows, and software
+            integrations to replace repetitive manual work with intelligent systems.
+            Instead of employees performing the same task repeatedly, an AI-driven workflow
+            can analyze inputs, retrieve relevant information, make structured decisions,
+            and trigger actions across tools like CRMs, email systems, or internal databases.
+          </p>
+
+          <p className="mt-4 text-gray-600 text-lg leading-relaxed">
+            In practice, AI automation is used to process documents, answer internal questions,
+            generate reports, route tasks, and support decision-making. When designed correctly,
+            these systems include governance controls, approval steps, and traceability so
+            organizations can deploy AI safely in real operational environments.
+          </p>
+
         </div>
       </section>
 
