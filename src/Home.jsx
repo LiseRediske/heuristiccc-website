@@ -405,7 +405,7 @@ export default function Home() {
             className="space-y-4"
           >
             <input type="hidden" name="form-name" value="framework-download" />
-            <input type="hidden" name="request_type" value="Framework Download" />
+            <input type="hidden" name="request_type" value="framework_download" />
             <input type="hidden" name="bot-field" />
 
             <div className="grid gap-4 sm:grid-cols-2">

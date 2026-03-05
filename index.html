@@ -80,20 +80,15 @@
   <!-- Netlify Forms: register framework-download -->
   <form name="framework-download" method="POST" data-netlify="true" hidden>
     <input type="hidden" name="form-name" value="framework-download" />
+    <input type="hidden" name="request_type" value="framework_download" />
 
     <input type="text" name="first_name" />
     <input type="text" name="last_name" />
     <input type="text" name="company" />
     <input type="email" name="email" />
-
     <input type="tel" name="phone_area" />
     <input type="tel" name="phone_number" />
-
-    <select name="timeline">
-      <option value="researching">Researching</option>
-      <option value="3-6 months">3–6 months</option>
-      <option value="immediate">Immediate</option>
-    </select>
+    <input type="text" name="timeline" />
   </form>
 
   <div id="root"></div>
