@@ -55,28 +55,30 @@ export default function Home() {
   // URL-encode form data for Netlify
   const encode = (data) => new URLSearchParams(data).toString();
 
-  // Deterministic Netlify submit + redirect (fixes Netlify Thank You page behavior)
+  // Deterministic Netlify submit + redirect
   const handleFrameworkSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
 
-    // Convert to a plain object so we can url-encode reliably
+    // Convert to a plain object
     const payload = {};
     for (const [key, value] of formData.entries()) {
       payload[key] = value;
     }
 
+    // CRITICAL: Ensure Netlify always receives form-name
+    payload["form-name"] = "framework-download";
+
     try {
-      // Post to site root; Netlify picks it up as a form submission
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode(payload)
       });
 
-      // Force redirect to the download page (GET)
+      // Redirect to download page
       window.location.assign("/framework-download");
     } catch (err) {
       alert("Submission failed. Please try again.");
