@@ -343,118 +343,134 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FRAMEWORK DOWNLOAD (EMAIL GATE) */}
-      <section id="framework" className="py-24 bg-white border-t border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-semibold mb-6">
-            AI Automation Implementation Framework
-          </h3>
+{/* FRAMEWORK DOWNLOAD (EMAIL GATE) */}
+<section id="framework" className="py-24 bg-white border-t border-gray-200">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h3 className="text-3xl font-semibold mb-6">
+      AI Automation Implementation Framework
+    </h3>
 
-          <p className="text-gray-600 mb-2">
-            A 3-page worksheet that helps teams evaluate whether a workflow is a strong candidate for AI automation.
-          </p>
-          <p className="text-gray-500 mb-8 text-sm">
-            Takes less than 3 minutes.
-          </p>
+    <p className="text-gray-600 mb-2">
+      A 3-page worksheet that helps teams evaluate whether a workflow is a strong candidate for AI automation.
+    </p>
+    <p className="text-gray-500 mb-8 text-sm">
+      Takes less than 3 minutes.
+    </p>
 
-          <form
-            name="framework-download"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            action="/framework-download"
-            onSubmit={handleFrameworkSubmit}
-            className="space-y-4"
+    <form
+      name="framework-download"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action="/framework-download"
+      onSubmit={handleFrameworkSubmit}
+      className="space-y-4"
+    >
+      <input type="hidden" name="form-name" value="framework-download" />
+      <input type="hidden" name="request_type" value="Framework Download" />
+      <input type="hidden" name="bot-field" />
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="First Name"
+          required
+          className="w-full p-4 border rounded"
+        />
+
+        <input
+          type="text"
+          name="last_name"
+          placeholder="Last Name"
+          required
+          className="w-full p-4 border rounded"
+        />
+      </div>
+
+      <input
+        type="text"
+        name="company"
+        placeholder="Company"
+        className="w-full p-4 border rounded"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        className="w-full p-4 border rounded"
+      />
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <input
+          type="tel"
+          name="phone_area"
+          placeholder="Area Code (e.g., 612)"
+          inputMode="numeric"
+          pattern="[0-9]{3}"
+          maxLength={3}
+          required
+          className="w-full p-4 border rounded"
+        />
+
+        <input
+          type="tel"
+          name="phone_number"
+          placeholder="Phone Number (e.g., 5551234)"
+          inputMode="numeric"
+          pattern="[0-9]{7}"
+          maxLength={7}
+          required
+          className="w-full p-4 border rounded"
+        />
+      </div>
+
+      <select
+        name="timeline"
+        required
+        className="w-full p-4 border rounded text-gray-700"
+        defaultValue=""
+      >
+        <option value="" disabled>
+          When are you looking to implement automation?
+        </option>
+        <option value="researching">Researching</option>
+        <option value="3-6 months">3–6 months</option>
+        <option value="immediate">Immediate</option>
+      </select>
+
+      <button
+        type="submit"
+        className="bg-blue-600 text-white px-8 py-4 rounded"
+      >
+        Download the 3-Minute Automation Evaluation Framework
+      </button>
+
+      <div className="pt-3 text-sm text-gray-600">
+        <p className="font-medium text-gray-800">
+          Want a fast answer on whether your workflow is a good automation candidate?
+        </p>
+        <p className="mt-1">
+          Book a strategy call and we’ll map the workflow, constraints, and next steps.
+        </p>
+        <div className="mt-3">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-3 font-semibold hover:bg-gray-800 transition"
           >
-            <input type="hidden" name="form-name" value="framework-download" />
-            <input type="hidden" name="request_type" value="Framework Download" />
-            <input type="hidden" name="bot-field" />
-
-            <input
-              type="text"
-              name="first_name"
-              placeholder="First Name"
-              required
-              className="w-full p-4 border rounded"
-            />
-
-            <input
-              type="text"
-              name="last_name"
-              placeholder="Last Name"
-              required
-              className="w-full p-4 border rounded"
-            />
-
-            <input
-              type="text"
-              name="company"
-              placeholder="Company"
-              className="w-full p-4 border rounded"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              className="w-full p-4 border rounded"
-            />
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                type="tel"
-                name="phone_area"
-                placeholder="Area Code (e.g., 612)"
-                inputMode="numeric"
-                pattern="[0-9]{3}"
-                maxLength={3}
-                required
-                className="w-full p-4 border rounded"
-              />
-
-              <input
-                type="tel"
-                name="phone_number"
-                placeholder="Phone Number (e.g., 5551234)"
-                inputMode="numeric"
-                pattern="[0-9]{7}"
-                maxLength={7}
-                required
-                className="w-full p-4 border rounded"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-8 py-4 rounded"
-            >
-              Download Framework
-            </button>
-
-            <div className="pt-3 text-sm text-gray-600">
-              <p className="font-medium text-gray-800">
-                Want a fast answer on whether your workflow is a good automation candidate?
-              </p>
-              <p className="mt-1">
-                Book a strategy call and we’ll map the workflow, constraints, and next steps.
-              </p>
-              <div className="mt-3">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-3 font-semibold hover:bg-gray-800 transition"
-                >
-                  Book a Strategy Call
-                </a>
-              </div>
-            </div>
-
-            <p className="text-xs text-gray-500">
-              US phone format only. Example: 612 and 5551234.
-            </p>
-          </form>
+            Book a Strategy Call
+          </a>
         </div>
-      </section>
+      </div>
+
+      <p className="text-xs text-gray-500">
+        US phone format only. Example: 612 and 5551234.
+      </p>
+    </form>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact" className="py-16 sm:py-20 bg-gray-950 text-white">
