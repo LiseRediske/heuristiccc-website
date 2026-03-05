@@ -52,6 +52,37 @@ export default function Home() {
     }
   ];
 
+  // URL-encode form data for Netlify
+  const encode = (data) => new URLSearchParams(data).toString();
+
+  // Deterministic Netlify submit + redirect (fixes Netlify Thank You page behavior)
+  const handleFrameworkSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // Convert to a plain object so we can url-encode reliably
+    const payload = {};
+    for (const [key, value] of formData.entries()) {
+      payload[key] = value;
+    }
+
+    try {
+      // Post to site root; Netlify picks it up as a form submission
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload)
+      });
+
+      // Force redirect to the download page (GET)
+      window.location.assign("/framework-download");
+    } catch (err) {
+      alert("Submission failed. Please try again.");
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
       {/* NAVBAR */}
@@ -332,10 +363,10 @@ export default function Home() {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             action="/framework-download"
+            onSubmit={handleFrameworkSubmit}
             className="space-y-4"
           >
             <input type="hidden" name="form-name" value="framework-download" />
-            <input type="hidden" name="redirect" value="/framework-download" />
             <input type="hidden" name="bot-field" />
 
             <input
@@ -369,12 +400,40 @@ export default function Home() {
               className="w-full p-4 border rounded"
             />
 
+            <div className="grid gap-4 sm:grid-cols-2">
+              <input
+                type="tel"
+                name="phone_area"
+                placeholder="Area Code (e.g., 612)"
+                inputMode="numeric"
+                pattern="[0-9]{3}"
+                maxLength={3}
+                required
+                className="w-full p-4 border rounded"
+              />
+
+              <input
+                type="tel"
+                name="phone_number"
+                placeholder="Phone Number (e.g., 5551234)"
+                inputMode="numeric"
+                pattern="[0-9]{7}"
+                maxLength={7}
+                required
+                className="w-full p-4 border rounded"
+              />
+            </div>
+
             <button
               type="submit"
               className="bg-blue-600 text-white px-8 py-4 rounded"
             >
               Download Framework
             </button>
+
+            <p className="text-xs text-gray-500">
+              US phone format only. Example: 612 and 5551234.
+            </p>
           </form>
         </div>
       </section>
