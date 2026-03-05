@@ -367,6 +367,7 @@ export default function Home() {
             className="space-y-4"
           >
             <input type="hidden" name="form-name" value="framework-download" />
+            <input type="hidden" name="request_type" value="Framework Download" />
             <input type="hidden" name="bot-field" />
 
             <input
@@ -431,6 +432,23 @@ export default function Home() {
               Download Framework
             </button>
 
+            <div className="pt-3 text-sm text-gray-600">
+              <p className="font-medium text-gray-800">
+                Want a fast answer on whether your workflow is a good automation candidate?
+              </p>
+              <p className="mt-1">
+                Book a strategy call and we’ll map the workflow, constraints, and next steps.
+              </p>
+              <div className="mt-3">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-3 font-semibold hover:bg-gray-800 transition"
+                >
+                  Book a Strategy Call
+                </a>
+              </div>
+            </div>
+
             <p className="text-xs text-gray-500">
               US phone format only. Example: 612 and 5551234.
             </p>
@@ -443,10 +461,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              Start the conversation
+              Book a Strategy Call
             </h3>
             <p className="mt-3 text-gray-300">
-              Send the objective and constraints. We’ll respond with next steps and an initial direction.
+              Share your objective, constraints, and tools. We’ll respond with next steps and scheduling options.
             </p>
           </div>
 
@@ -460,6 +478,7 @@ export default function Home() {
               className="space-y-5"
             >
               <input type="hidden" name="form-name" value="contact-form" />
+              <input type="hidden" name="request_type" value="Strategy Call" />
               <input type="hidden" name="bot-field" />
 
               <div className="grid gap-4 sm:grid-cols-2">
