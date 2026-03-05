@@ -157,7 +157,9 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
-                href="#contact"
+                href="https://calendly.com/lise-heuristiccc/30min"
+                target="_blank"
+                rel="noopener"
                 className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
               >
                 Schedule a strategy discussion
@@ -493,7 +495,9 @@ export default function Home() {
               </p>
               <div className="mt-3">
                 <a
-                  href="#contact"
+                  href="https://calendly.com/lise-heuristiccc/30min"
+                  target="_blank"
+                  rel="noopener"
                   className="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-3 font-semibold hover:bg-gray-800 transition"
                 >
                   Book a Strategy Call
@@ -592,10 +596,12 @@ export default function Home() {
       {/* MOBILE STICKY CTA */}
       <div className="sm:hidden fixed bottom-4 left-0 right-0 px-4 z-50">
         <a
-          href="#contact"
+          href="https://calendly.com/lise-heuristiccc/30min"
+          target="_blank"
+          rel="noopener"
           className="block text-center rounded-md bg-blue-600 text-white py-3 font-semibold shadow-lg"
         >
-          Book a Strategy Call
+          Schedule a Strategy Call
         </a>
       </div>
 
