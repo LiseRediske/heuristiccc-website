@@ -343,9 +343,14 @@ export default function Home() {
             <div className="flex gap-3">
               <a
                 href="#contact"
+                onClick={(e) => {
+                  const field = document.getElementById("request_type");
+                  if (field) field.value = "white_paper";
+                  window.location.hash = "contact";
+                }}
                 className="inline-flex justify-center rounded-md bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition"
               >
-                Request white paper
+                Request White Paper
               </a>
             </div>
           </div>
@@ -534,7 +539,7 @@ export default function Home() {
               className="space-y-5"
             >
               <input type="hidden" name="form-name" value="contact-form" />
-              <input type="hidden" name="request_type" value="strategy_call" />
+              <input type="hidden" id="request_type" name="request_type" value="strategy_call" />
               <input type="hidden" name="bot-field" />
 
               <div className="grid gap-4 sm:grid-cols-2">
