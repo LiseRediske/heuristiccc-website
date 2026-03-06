@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <title>AI Automation Consulting | Heuristic Consulting</title>
 
-  <meta name="description"
-    content="AI automation consulting, RAG systems, and AI agent implementation for organizations that require production reliability, governance, and measurable outcomes.">
+  <meta
+    name="description"
+    content="AI automation consulting, RAG systems, and AI agent implementation for organizations that require production reliability, governance, and measurable outcomes."
+  />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -50,9 +52,9 @@
     }
   ]
 }
-</script>
+  </script>
 
-  <!-- Organization Schema (AEO / Entity association) -->
+  <!-- Organization Schema -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,19 +62,20 @@
   "name": "Heuristic Consulting Corporation",
   "url": "https://heuristiccc.com",
   "logo": "https://heuristiccc.com/Heuristic-logo.png",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "telephone": "+1-612-404-6281",
-    "contactType": "sales",
-    "email": "lise@heuristiccc.com",
-    "areaServed": "US"
-  }],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-612-404-6281",
+      "contactType": "sales",
+      "email": "lise@heuristiccc.com",
+      "areaServed": "US"
+    }
+  ],
   "sameAs": [
     "https://www.linkedin.com/company/heuristic-consultng-corp"
   ]
 }
-</script>
-
+  </script>
 </head>
 
 <body>
@@ -81,6 +84,7 @@
   <form name="framework-download" method="POST" data-netlify="true" hidden>
     <input type="hidden" name="form-name" value="framework-download" />
     <input type="hidden" name="request_type" value="framework_download" />
+    <input type="text" name="bot-field" />
 
     <input type="text" name="first_name" />
     <input type="text" name="last_name" />
@@ -89,6 +93,17 @@
     <input type="tel" name="phone_area" />
     <input type="tel" name="phone_number" />
     <input type="text" name="timeline" />
+  </form>
+
+  <!-- Netlify Forms: register contact-form -->
+  <form name="contact-form" method="POST" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="contact-form" />
+    <input type="hidden" name="request_type" value="strategy_call" />
+    <input type="text" name="bot-field" />
+
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
   </form>
 
   <div id="root"></div>

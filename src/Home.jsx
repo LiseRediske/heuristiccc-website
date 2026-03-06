@@ -534,7 +534,7 @@ export default function Home() {
               className="space-y-5"
             >
               <input type="hidden" name="form-name" value="contact-form" />
-              <input type="hidden" name="request_type" value="Strategy Call" />
+              <input type="hidden" name="request_type" value="strategy_call" />
               <input type="hidden" name="bot-field" />
 
               <div className="grid gap-4 sm:grid-cols-2">
