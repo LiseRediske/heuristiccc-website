@@ -29,7 +29,38 @@ export default function AIAssistantWidget() {
         if (!message) return;
 
         const userMessage = { role: "user", text: message };
-        const updatedState = applyPendingQuestion(state, message);
+        const lower = message.toLowerCase();
+
+        const questionTriggers = [
+            "what",
+            "how",
+            "why",
+            "can",
+            "do",
+            "should",
+            "tell",
+            "who",
+            "when",
+            "where",
+        ];
+
+        let workingState = state;
+
+        // If the assistant is waiting for a qualification answer,
+        // but the user asks a new question instead, reset the flow first.
+        if (
+            state.pendingQuestion &&
+            questionTriggers.some((word) => lower.startsWith(word))
+        ) {
+            workingState = {
+                intent: null,
+                pendingQuestion: null,
+                businessType: "",
+                bottleneck: "",
+            };
+        }
+
+        let updatedState = applyPendingQuestion(workingState, message);
 
         let reply;
 
@@ -135,8 +166,8 @@ export default function AIAssistantWidget() {
                             >
                                 <div
                                     className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${msg.role === "user"
-                                            ? "bg-gray-900 text-white"
-                                            : "bg-gray-100 text-gray-900"
+                                        ? "bg-gray-900 text-white"
+                                        : "bg-gray-100 text-gray-900"
                                         }`}
                                 >
                                     <p>{msg.text}</p>
