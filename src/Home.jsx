@@ -1,3 +1,5 @@
+import AIAssistantWidget from "./components/AIAssistantWidget";
+
 export default function Home() {
   const services = [
     {
@@ -620,6 +622,9 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      <AIAssistantWidget />
+
     </main>
   );
 }
