@@ -51,15 +51,15 @@ export function detectIntent(message) {
     ];
 
     const strategyTerms = [
-        "strategy call",
-        "book",
-        "call",
-        "talk",
-        "consulting",
-        "consult",
-        "need help",
-        "implementation",
-    ];
+  "strategy call",
+  "book",
+  "schedule",
+  "talk",
+  "need help",
+  "implementation",
+  "work with you",
+  "speak with someone",
+];
 
     const generalTerms = [
         "what do you do",
@@ -106,7 +106,7 @@ export function buildAssistantReply({ message, state, offers }) {
     if (intent === "white_paper") {
         return {
             intent,
-            text: `The White Paper is the best starting point if you want a practical overview of AI systems architecture and where automation may create value. ${offers.white_paper.summary}`,
+            text: `The White Paper is the best starting point if you want a practical overview of AI systems architecture and where automation may create value. Use the White Paper form and it will be sent immediately.`,
             ctas: [
                 {
                     label: offers.white_paper.ctaLabel,
@@ -120,7 +120,7 @@ export function buildAssistantReply({ message, state, offers }) {
     if (intent === "framework_download") {
         return {
             intent,
-            text: `The Framework is better if you want a more structured way to think about AI readiness, use cases, and next steps. ${offers.framework_download.summary}`,
+            text: `The Framework is better if you want a structured way to evaluate AI readiness, use cases, and implementation paths. Use the Framework form to get the download and a clearer path for next-step evaluation.`,
             ctas: [
                 {
                     label: offers.framework_download.ctaLabel,
@@ -135,7 +135,7 @@ export function buildAssistantReply({ message, state, offers }) {
         if (!state.businessType) {
             return {
                 intent,
-                text: `A Strategy Call makes sense if you already have a business problem, process bottleneck, or implementation question in mind. What kind of business are you in?`,
+                text: `A Strategy Call makes sense if you already have a business problem, process bottleneck, or implementation question in mind. I’ll ask two short questions to see whether a strategy call is the right next step. What kind of business are you in?`,
                 ctas: [],
                 nextState: { ...state, intent, pendingQuestion: "businessType" },
             };

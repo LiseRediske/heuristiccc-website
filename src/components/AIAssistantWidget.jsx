@@ -84,7 +84,7 @@ export default function AIAssistantWidget() {
         ) {
             reply = {
                 intent: "strategy_call",
-                text: `It sounds like you're exploring AI automation for a ${updatedState.businessType} and focusing on improving ${updatedState.bottleneck}. A short strategy call is usually the fastest way to determine whether automation or system redesign makes sense.`,
+                text: `It sounds like you're exploring AI automation for a ${updatedState.businessType} and focusing on improving ${updatedState.bottleneck}. A short strategy call is usually the fastest way to determine whether automation or system redesign makes sense. Use the Strategy Call link to book directly.`,
                 ctas: [
                     {
                         label: assistantContext.offers.strategy_call.ctaLabel,
@@ -171,6 +171,16 @@ export default function AIAssistantWidget() {
                                         }`}
                                 >
                                     <p>{msg.text}</p>
+                                    {msg.role === "assistant" && !msg.ctas?.length && idx > 0 && (
+                                        <div className="mt-3 text-xs text-gray-500">
+                                            <p>You could also ask:</p>
+                                            <ul className="mt-1 list-disc list-inside">
+                                                <li>What types of workflows can AI automate?</li>
+                                                <li>How does a RAG knowledge system work?</li>
+                                                <li>How long does an AI implementation usually take?</li>
+                                            </ul>
+                                        </div>
+                                    )}
 
                                     {msg.ctas?.length > 0 && (
                                         <div className="mt-3 flex flex-col gap-2">
