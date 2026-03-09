@@ -20,6 +20,7 @@ export default function AIAssistantWidget() {
         pendingQuestion: null,
         businessType: "",
         bottleneck: "",
+        leadSummary: "",
     });
 
     const quickActions = useMemo(() => assistantContext.quickActions, []);
@@ -30,6 +31,18 @@ export default function AIAssistantWidget() {
 
         const userMessage = { role: "user", text: message };
         const lower = message.toLowerCase();
+
+        const writeLeadSummaryToForms = (summary) => {
+            const strategyField = document.getElementById("lead_summary");
+            if (strategyField) {
+                strategyField.value = summary || "";
+            }
+
+            const frameworkField = document.getElementById("framework_lead_summary");
+            if (frameworkField) {
+                frameworkField.value = summary || "";
+            }
+        };
 
         const questionTriggers = [
             "what",
@@ -57,6 +70,7 @@ export default function AIAssistantWidget() {
                 pendingQuestion: null,
                 businessType: "",
                 bottleneck: "",
+                leadSummary: "",
             };
         }
 
@@ -85,13 +99,17 @@ export default function AIAssistantWidget() {
             reply = {
                 intent: "strategy_call",
                 text: `It sounds like you're exploring AI automation for a ${updatedState.businessType} and focusing on improving ${updatedState.bottleneck}. A short strategy call is usually the fastest way to determine whether automation or system redesign makes sense. Use the Strategy Call link to book directly.`,
+                summary: `Lead Intent: Strategy Call | Business Type: ${updatedState.businessType} | Focus Area: ${updatedState.bottleneck}`,
                 ctas: [
                     {
                         label: assistantContext.offers.strategy_call.ctaLabel,
                         href: assistantContext.offers.strategy_call.href,
                     },
                 ],
-                nextState: { ...updatedState },
+                nextState: {
+                    ...updatedState,
+                    leadSummary: `Lead Intent: Strategy Call | Business Type: ${updatedState.businessType} | Focus Area: ${updatedState.bottleneck}`,
+                },
             };
         } else {
             reply = buildAssistantReply({
@@ -105,7 +123,12 @@ export default function AIAssistantWidget() {
             role: "assistant",
             text: reply.text,
             ctas: reply.ctas || [],
+            summary: reply.summary || "",
         };
+
+        if (reply.summary) {
+            writeLeadSummaryToForms(reply.summary);
+        }
 
         setMessages((prev) => [...prev, userMessage, assistantMessage]);
         setState(reply.nextState);
@@ -171,6 +194,12 @@ export default function AIAssistantWidget() {
                                         }`}
                                 >
                                     <p>{msg.text}</p>
+                                    {msg.summary && (
+                                        <div className="mt-3 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs text-gray-700">
+                                            <p className="font-semibold text-gray-900">Lead Summary</p>
+                                            <p className="mt-1">{msg.summary}</p>
+                                        </div>
+                                    )}
                                     {msg.role === "assistant" && !msg.ctas?.length && idx > 0 && (
                                         <div className="mt-3 text-xs text-gray-500">
                                             <p>You could also ask:</p>

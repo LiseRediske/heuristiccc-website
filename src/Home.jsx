@@ -414,6 +414,7 @@ export default function Home() {
             <input type="hidden" name="form-name" value="framework-download" />
             <input type="hidden" name="request_type" value="framework_download" />
             <input type="hidden" name="bot-field" />
+            <input type="hidden" id="framework_lead_summary" name="lead_summary" value="" />
 
             <div className="grid gap-4 sm:grid-cols-2">
               <input
@@ -543,6 +544,7 @@ export default function Home() {
               <input type="hidden" name="form-name" value="contact-form" />
               <input type="hidden" id="request_type" name="request_type" value="strategy_call" />
               <input type="hidden" name="bot-field" />
+              <input type="hidden" id="lead_summary" name="lead_summary" value="" />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
