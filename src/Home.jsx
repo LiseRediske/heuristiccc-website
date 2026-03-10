@@ -54,23 +54,36 @@ export default function Home() {
     }
   ];
 
-  // URL-encode form data for Netlify
   const encode = (data) => new URLSearchParams(data).toString();
 
-  // Deterministic Netlify submit + redirect
+  const ensureLeadSummaryPresent = (formEl) => {
+    if (!formEl) return;
+
+    const leadSummaryValue =
+      document.getElementById("lead_summary")?.value ||
+      document.getElementById("framework_lead_summary")?.value ||
+      "";
+
+    const field = formEl.querySelector('input[name="lead_summary"]');
+    if (field) {
+      field.value = leadSummaryValue;
+      field.setAttribute("value", leadSummaryValue);
+    }
+  };
+
   const handleFrameworkSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
+    ensureLeadSummaryPresent(form);
+
     const formData = new FormData(form);
 
-    // Convert to a plain object
     const payload = {};
     for (const [key, value] of formData.entries()) {
       payload[key] = value;
     }
 
-    // CRITICAL: Ensure Netlify always receives form-name
     payload["form-name"] = "framework-download";
 
     try {
@@ -80,7 +93,6 @@ export default function Home() {
         body: encode(payload)
       });
 
-      // Redirect to download page
       window.location.assign("/framework-download");
     } catch (err) {
       alert("Submission failed. Please try again.");
@@ -277,7 +289,6 @@ export default function Home() {
       {/* WHAT IS AI AUTOMATION */}
       <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-6">
-
           <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
             What is AI Automation?
           </h3>
@@ -296,7 +307,6 @@ export default function Home() {
             these systems include governance controls, approval steps, and traceability so
             organizations can deploy AI safely in real operational environments.
           </p>
-
         </div>
       </section>
 
@@ -345,10 +355,9 @@ export default function Home() {
             <div className="flex gap-3">
               <a
                 href="#contact"
-                onClick={(e) => {
+                onClick={() => {
                   const field = document.getElementById("request_type");
                   if (field) field.value = "white_paper";
-                  window.location.hash = "contact";
                 }}
                 className="inline-flex justify-center rounded-md bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition"
               >
@@ -389,7 +398,7 @@ export default function Home() {
       </section>
 
       {/* FRAMEWORK DOWNLOAD (EMAIL GATE) */}
-      <section id="framework" className="py-24 bg-white border-t border-gray-200">
+      <section id="framework-download" className="py-24 bg-white border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold mb-6">
             AI Automation Implementation Framework
@@ -540,6 +549,7 @@ export default function Home() {
               data-netlify-honeypot="bot-field"
               action="/success"
               className="space-y-5"
+              onSubmit={(e) => ensureLeadSummaryPresent(e.currentTarget)}
             >
               <input type="hidden" name="form-name" value="contact-form" />
               <input type="hidden" id="request_type" name="request_type" value="strategy_call" />
@@ -626,7 +636,6 @@ export default function Home() {
       </footer>
 
       <AIAssistantWidget />
-
     </main>
   );
 }
