@@ -1,4 +1,4 @@
-import AIAssistantWidget from "./components/AIAssistantWidget";
+import AIAssistantWidget from "../components/AIAssistantWidget";
 
 export default function Home() {
   const services = [
