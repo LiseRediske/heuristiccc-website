@@ -636,7 +636,6 @@ export default function Home() {
                   type="checkbox"
                   name="sms_opt_in"
                   value="yes"
-                  required
                   style={{ accentColor: "#2563eb" }}
                   className="mt-1 h-5 w-5 shrink-0 cursor-pointer appearance-auto bg-white"
                 />
