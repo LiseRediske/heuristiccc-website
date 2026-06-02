@@ -109,12 +109,12 @@ export default function Home() {
               >
                 Schedule a strategy discussion
               </a>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="flex w-full justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
               >
-                See capabilities
-              </a>
+                See Our Services
+              </Link>
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-200/90">

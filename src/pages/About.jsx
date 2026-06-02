@@ -48,8 +48,9 @@ export default function About() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="font-semibold text-white">We Eat Our Own Cooking</p>
             <p className="mt-2 text-sm text-gray-200/80">
-              Our AI receptionist answers our main business line. That is not a
-              demo — that is how we operate.
+              Our AI receptionist answers our main business line. Our AI webchat
+              is live on this site. Ask it anything. That is not a demo — that is
+              how we operate.
             </p>
           </div>
         </div>
