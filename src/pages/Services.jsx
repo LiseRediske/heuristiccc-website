@@ -80,12 +80,12 @@ export default function Services() {
               <p className="text-sm text-gray-300">
                 Not sure if you're ready for an assessment?{" "}
                 <a
-                  href="/AI_Automation_Implementation_Framework.pdf"
+                  href="/assets/AI_Systems_Architecture_White_Paper.pdf"
                   target="_blank"
                   rel="noopener"
                   className="underline text-white hover:text-blue-300"
                 >
-                  Download our AI readiness guide first.
+                  Download our white paper first.
                 </a>
               </p>
             </div>
