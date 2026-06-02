@@ -109,6 +109,17 @@
     <input type="text" name="lead_summary" />
   </form>
 
+  <!-- Netlify Forms: register contact (mirrors src/pages/Contact.jsx) -->
+  <form name="contact" data-netlify="true" hidden style="display:none">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" />
+    <input type="text" name="company" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <textarea name="message"></textarea>
+    <input type="checkbox" name="sms_opt_in" value="yes" />
+  </form>
+
   <div id="root"></div>
 
   <script type="module" src="/src/main.jsx"></script>
