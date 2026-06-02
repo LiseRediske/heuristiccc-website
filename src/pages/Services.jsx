@@ -1,8 +1,163 @@
+import { Link } from "react-router-dom";
+
 export default function Services() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-24 text-gray-100">
-      <h1 className="text-4xl font-semibold">Services</h1>
-      <p className="mt-4 text-lg text-gray-400">Coming soon</p>
+    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+        {/* Page intro */}
+        <div className="max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
+            Services
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl">
+            From assessing your readiness to building systems that run — Heuristic
+            works with you across the full AI journey.
+          </p>
+        </div>
+
+        <div className="mt-14 space-y-8">
+          {/* SERVICE 1 — entry product, visually prominent */}
+          <section className="relative rounded-2xl border-2 border-blue-500/60 bg-blue-500/5 p-8 sm:p-10 shadow-lg shadow-blue-500/10">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-gray-200/90 bg-white/10 border border-white/10 rounded-full px-3 py-1">
+              Start here
+              <span className="h-1 w-1 rounded-full bg-gray-300" />
+              Entry product
+            </p>
+
+            <h2 className="mt-6 text-2xl sm:text-3xl font-bold tracking-tight">
+              AI Readiness Assessment
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              A structured evaluation of your organization's readiness to adopt
+              AI — people, processes, data, and infrastructure. Covers workflow,
+              data, and governance dimensions.
+            </p>
+
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  What you get
+                </p>
+                <p className="mt-1 text-sm text-gray-200/90">
+                  A written report with a clear path forward. Honest findings, no
+                  vendor agenda.
+                </p>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  Timeline
+                </p>
+                <p className="mt-1 text-sm text-gray-200/90">
+                  A few hours for small businesses. Scope and timeline scale with
+                  organizational complexity.
+                </p>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  Price
+                </p>
+                <p className="mt-1 text-sm text-gray-200/90">
+                  Starting at $300. Scope and pricing scale with organizational
+                  complexity. Full cost applied as a credit toward any Heuristic
+                  implementation engagement.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="https://calendly.com/lise-heuristiccc/30min"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Schedule Your Assessment
+              </a>
+            </div>
+          </section>
+
+          {/* SERVICE 2 — Data & Governance */}
+          <section className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              Data &amp; Governance
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              Pre-implementation data readiness — cleaning, structuring, and
+              governing your data so AI systems produce reliable outputs.
+              Strategic advisory only.
+            </p>
+
+            <div className="mt-8 max-w-xl">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  What you get
+                </p>
+                <p className="mt-1 text-sm text-gray-200/90">
+                  A data foundation AI can actually use. Reduced risk of bad
+                  outputs from bad inputs.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <Link
+                to="/contact"
+                className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 font-semibold hover:bg-white/10 transition"
+              >
+                Let's Talk
+              </Link>
+            </div>
+          </section>
+
+          {/* SERVICE 3 — AI Implementation */}
+          <section className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              AI Implementation
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              End-to-end build of AI-enabled systems. Voice agents, workflow
+              automation, SMS/email sequences, CRM integration, and agentic
+              systems.
+            </p>
+
+            <div className="mt-6 max-w-3xl rounded-lg border border-white/10 bg-white/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                What are agentic systems?
+              </p>
+              <p className="mt-1 text-sm text-gray-200/90">
+                Agentic systems are AI that take multi-step actions on behalf of
+                your business — not just responding to prompts, but completing
+                workflows autonomously.
+              </p>
+            </div>
+
+            <div className="mt-8 max-w-xl">
+              <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  What you get
+                </p>
+                <p className="mt-1 text-sm text-gray-200/90">
+                  A working system, not a proof of concept.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="https://calendly.com/heuristiccc"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Schedule a Conversation
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   );
 }
