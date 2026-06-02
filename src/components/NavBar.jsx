@@ -17,11 +17,20 @@ const linkClass = ({ isActive }) =>
 
 function Brand({ onClick }) {
   return (
-    <Link to="/" onClick={onClick} className="leading-tight">
-      <p className="font-semibold tracking-tight text-white">
-        Heuristic Consulting
-      </p>
-      <p className="text-xs text-gray-400">AI Systems &amp; Automation</p>
+    <Link to="/" onClick={onClick} className="flex items-center gap-2">
+      <img
+        src="/Heuristic-logo.png"
+        alt="Heuristic Consulting"
+        className="h-8 w-auto"
+      />
+      <span className="leading-tight">
+        <span className="block font-semibold tracking-tight text-white">
+          Heuristic Consulting
+        </span>
+        <span className="block text-xs text-gray-400">
+          AI Systems &amp; Automation
+        </span>
+      </span>
     </Link>
   );
 }
