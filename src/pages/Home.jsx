@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import AIAssistantWidget from "../components/AIAssistantWidget";
 
 export default function Home() {
 
@@ -95,10 +94,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Link
                 to="/services"
-                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+                className="flex w-full justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
               >
                 Start with an Assessment
               </Link>
@@ -106,13 +105,13 @@ export default function Home() {
                 href="https://calendly.com/lise-heuristiccc/30min"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
+                className="flex w-full justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
               >
                 Schedule a strategy discussion
               </a>
               <a
                 href="#services"
-                className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
+                className="flex w-full justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
               >
                 See capabilities
               </a>
@@ -326,33 +325,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-black text-gray-400 text-center py-10 text-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="font-medium text-gray-300">612-404-6281</p>
-          <p className="mt-1">lise@heuristiccc.com</p>
-          <p className="mt-4">
-            <a
-              href="/privacy"
-              className="text-gray-300 hover:text-white underline-offset-2 hover:underline"
-            >
-              Privacy Policy
-            </a>
-            <span className="mx-2 text-gray-600">·</span>
-            <a
-              href="/terms"
-              className="text-gray-300 hover:text-white underline-offset-2 hover:underline"
-            >
-              SMS Terms
-            </a>
-          </p>
-          <p className="mt-4">
-            © {new Date().getFullYear()} Heuristic Consulting Corporation
-          </p>
-        </div>
-      </footer>
-
-      <AIAssistantWidget />
     </main>
   );
 }
