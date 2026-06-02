@@ -383,35 +383,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHITE PAPER */}
-      <section id="whitepaper" className="py-16 sm:py-20 bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8 sm:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="max-w-2xl">
-              <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-                AI Systems Architecture White Paper
-              </h3>
-              <p className="mt-3 text-gray-600">
-                A structured guide covering LLM foundations, RAG systems, agent design, context engineering,
-                and governance frameworks for professional firms.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <a
-                href="#contact"
-                onClick={() => {
-                  const field = document.getElementById("request_type");
-                  if (field) field.value = "white_paper";
-                }}
-                className="inline-flex justify-center rounded-md bg-gray-900 text-white px-6 py-3 font-semibold hover:bg-gray-800 transition"
-              >
-                Request White Paper
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -711,18 +682,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* MOBILE STICKY CTA */}
-      <div className="sm:hidden fixed bottom-4 left-0 right-0 px-4 z-50">
-        <a
-          href="https://calendly.com/lise-heuristiccc/30min"
-          target="_blank"
-          rel="noopener"
-          className="block text-center rounded-md bg-blue-600 text-white py-3 font-semibold shadow-lg"
-        >
-          Schedule a Strategy Call
-        </a>
-      </div>
 
       {/* FOOTER */}
       <footer className="bg-black text-gray-400 text-center py-10 text-sm">

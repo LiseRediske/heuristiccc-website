@@ -75,6 +75,20 @@ export default function Services() {
                 Schedule Your Assessment
               </a>
             </div>
+
+            <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4">
+              <p className="text-sm text-gray-300">
+                Not sure if you're ready for an assessment?{" "}
+                <a
+                  href="/AI_Automation_Implementation_Framework.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  className="underline text-white hover:text-blue-300"
+                >
+                  Download our AI readiness guide first.
+                </a>
+              </p>
+            </div>
           </section>
 
           {/* SERVICE 2 — Data & Governance */}
