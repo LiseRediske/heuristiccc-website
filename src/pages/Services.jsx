@@ -147,7 +147,7 @@ export default function Services() {
 
             <div className="mt-8">
               <a
-                href="https://calendly.com/heuristiccc"
+                href="https://calendly.com/lise-heuristiccc/30min"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
