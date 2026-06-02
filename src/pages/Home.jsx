@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AIAssistantWidget from "../components/AIAssistantWidget";
 
 export default function Home() {
@@ -155,12 +156,12 @@ export default function Home() {
             </p>
 
             <h2 className="mt-6 text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
-              Build AI systems that operate in production.
+              From AI Curiosity to AI Capability
             </h2>
 
             <p className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl">
-              We architect and deploy LLM-powered systems, retrieval frameworks, and automation pipelines
-              that replace manual work and produce measurable operational leverage.
+              We assess where you stand, prepare your data, and build AI systems
+              that actually work.
             </p>
 
             <p className="mt-4 text-base text-gray-300 max-w-2xl">
@@ -169,12 +170,40 @@ export default function Home() {
               organizations that require governance, traceability, and measurable ROI.
             </p>
 
+            {/* THREE ENTRY POINTS */}
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <p className="font-semibold text-white">Assess</p>
+                <p className="mt-2 text-sm text-gray-200/80">
+                  Understand where your business stands on AI readiness
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <p className="font-semibold text-white">Prepare</p>
+                <p className="mt-2 text-sm text-gray-200/80">
+                  Clean data, governance, and the right foundation
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <p className="font-semibold text-white">Build</p>
+                <p className="mt-2 text-sm text-gray-200/80">
+                  Implemented, working AI systems — including agentic systems
+                </p>
+              </div>
+            </div>
+
             <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link
+                to="/services"
+                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Start with an Assessment
+              </Link>
               <a
                 href="https://calendly.com/lise-heuristiccc/30min"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+                className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 hover:bg-white/10 transition"
               >
                 Schedule a strategy discussion
               </a>
@@ -200,6 +229,65 @@ export default function Home() {
                 <p className="mt-1 text-gray-200/80">Approvals, roles, governance</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROOF */}
+      <section className="bg-gray-950 text-gray-100 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              Real systems, already running
+            </h3>
+            <p className="mt-3 text-gray-300">
+              Not demos — deployed work in real operational environments.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold text-white">
+                AI Voice Receptionist
+              </h4>
+              <p className="mt-2 text-gray-200/80">
+                Deployed for an IT support company. Staff adopted immediately.
+                Intake handled without human intervention.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold text-white">
+                Social Media Automation
+              </h4>
+              <p className="mt-2 text-gray-200/80">
+                Live, paying client. Crafted for Courage automated their content
+                pipeline end to end.
+              </p>
+            </div>
+          </div>
+
+          {/* Callout — we use what we build */}
+          <div className="mt-6 rounded-2xl border border-blue-500/40 bg-blue-500/5 p-6">
+            <p className="text-gray-100">
+              We use what we build. Call our main line and meet our AI
+              receptionist:{" "}
+              <a
+                href="tel:+18557749933"
+                className="font-semibold text-white underline hover:text-blue-300"
+              >
+                855-774-9933
+              </a>
+            </p>
+          </div>
+
+          {/* SECONDARY CTA */}
+          <div className="mt-10">
+            <Link
+              to="/solutions"
+              className="inline-flex justify-center rounded-md border border-white/30 px-6 py-3 font-semibold hover:bg-white/10 transition"
+            >
+              Explore Our Solutions
+            </Link>
           </div>
         </div>
       </section>
