@@ -164,12 +164,6 @@ export default function Home() {
               that actually work.
             </p>
 
-            <p className="mt-4 text-base text-gray-300 max-w-2xl">
-              Heuristic Consulting designs and deploys production-grade AI automation systems, including
-              retrieval-augmented generation (RAG), AI agents, and workflow automation pipelines for
-              organizations that require governance, traceability, and measurable ROI.
-            </p>
-
             {/* THREE ENTRY POINTS */}
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
