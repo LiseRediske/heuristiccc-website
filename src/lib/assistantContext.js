@@ -37,6 +37,14 @@ export const assistantContext = {
       ctaLabel: "Schedule a Strategy Call",
       href: "https://calendly.com/lise-heuristiccc/30min",
     },
+
+    education: {
+      label: "Business AI Education",
+      summary:
+        "Live, hands-on AI workshops for business teams, delivered on-site or virtually and tailored to your industry, tools, and team. Priced by engagement — no public pricing; contact us to discuss your team's needs.",
+      ctaLabel: "Contact Us",
+      href: "/contact",
+    },
   },
 
   pages: {

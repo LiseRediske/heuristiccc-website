@@ -170,6 +170,46 @@ export default function Services() {
               </a>
             </div>
           </section>
+
+          {/* SERVICE 4 — Business AI Education */}
+          <section className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              Business AI Education
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              Most organizations aren't failing at AI because the technology
+              doesn't work — they're failing because their teams don't know how
+              to use it in context. Heuristic's Business AI Education workshops
+              close that gap.
+            </p>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              We deliver practical, hands-on AI training designed around your
+              industry, your tools, and your team's actual work. Sessions are
+              available on-site or virtually, and are tailored to executive
+              teams, operational staff, or mixed groups.
+            </p>
+
+            <p className="mt-4 text-base sm:text-lg text-gray-200 max-w-3xl">
+              Topics range from AI fundamentals for business leaders to applied
+              AI workflow training for day-to-day staff.
+            </p>
+
+            <p className="mt-6 text-sm text-gray-400 max-w-3xl">
+              Pricing varies by team size, format, and content depth. Contact us
+              to discuss your team's needs.
+            </p>
+
+            <div className="mt-8">
+              <Link
+                to="/contact"
+                className="inline-flex justify-center rounded-md bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 transition"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </main>

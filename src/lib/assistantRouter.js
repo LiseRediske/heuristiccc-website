@@ -90,6 +90,16 @@ export function detectIntent(message) {
         "agentic",
         "workflow automation",
         "crm",
+        "education",
+        "training",
+        "workshop",
+        "workshops",
+        "staff training",
+        "team training",
+        "ai training",
+        "ai education",
+        "business ai",
+        "teach my team",
     ];
 
     const solutionsTerms = [
