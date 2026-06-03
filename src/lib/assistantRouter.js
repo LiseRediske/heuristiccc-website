@@ -27,6 +27,8 @@ function isRelevantBusinessQuery(message) {
         "productivity",
         "efficiency",
         "llm",
+        "assessment",
+        "agentic",
     ];
 
     return relevantTerms.some((term) => text.includes(term));
@@ -35,45 +37,91 @@ function isRelevantBusinessQuery(message) {
 export function detectIntent(message) {
     const text = normalize(message);
 
+    const assessmentTerms = [
+        "assessment",
+        "readiness",
+        "where do i start",
+        "how ready",
+        "evaluate",
+        "$300",
+        "three hundred",
+    ];
+
     const whitePaperTerms = [
         "white paper",
         "paper",
         "architecture paper",
-        "send me the paper",
+        "download",
     ];
 
     const frameworkTerms = [
         "framework",
-        "download",
-        "assessment",
-        "model",
-        "readiness",
+        "worksheet",
+        "automation candidate",
+        "3 minute",
+        "three minute",
     ];
 
     const strategyTerms = [
-  "strategy call",
-  "book",
-  "schedule",
-  "talk",
-  "need help",
-  "implementation",
-  "work with you",
-  "speak with someone",
-];
-
-    const generalTerms = [
-        "what do you do",
-        "what is ai automation",
-        "can ai help",
-        "business operations",
-        "systems architecture",
-        "automation",
+        "strategy call",
+        "book",
+        "schedule",
+        "talk",
+        "need help",
+        "implementation",
+        "work with you",
+        "speak with someone",
+        "call",
     ];
 
+    const servicesTerms = [
+        "what do you offer",
+        "services",
+        "what can you build",
+        "voice agent",
+        "voice receptionist",
+        "agentic",
+        "workflow automation",
+        "crm",
+    ];
+
+    const solutionsTerms = [
+        "solutions",
+        "tools",
+        "products",
+        "demo",
+        "social media",
+        "real estate",
+        "auto dealer",
+    ];
+
+    const caseStudiesTerms = [
+        "case study",
+        "case studies",
+        "what have you built",
+        "proof",
+        "examples",
+        "clients",
+        "crafted for courage",
+    ];
+
+    const aboutTerms = [
+        "about",
+        "who are you",
+        "experience",
+        "background",
+        "credentials",
+        "trust",
+    ];
+
+    if (assessmentTerms.some((term) => text.includes(term))) return "assessment";
     if (whitePaperTerms.some((term) => text.includes(term))) return "white_paper";
     if (frameworkTerms.some((term) => text.includes(term))) return "framework_download";
     if (strategyTerms.some((term) => text.includes(term))) return "strategy_call";
-    if (generalTerms.some((term) => text.includes(term))) return "general";
+    if (servicesTerms.some((term) => text.includes(term))) return "services";
+    if (solutionsTerms.some((term) => text.includes(term))) return "solutions";
+    if (caseStudiesTerms.some((term) => text.includes(term))) return "case_studies";
+    if (aboutTerms.some((term) => text.includes(term))) return "about";
 
     return "general";
 }
@@ -84,15 +132,11 @@ export function buildAssistantReply({ message, state, offers }) {
     if (!isRelevantBusinessQuery(message)) {
         return {
             intent: "off_topic",
-            text: "I’m focused on helping visitors understand Heuristic Consulting’s AI automation resources and next steps. I can point you to the White Paper, the Framework, or help determine whether a Strategy Call makes sense.",
+            text: "I am focused on helping visitors understand Heuristic Consulting's services and next steps. I can tell you about our AI Readiness Assessment, what we have built, or help you schedule a call.",
             ctas: [
                 {
-                    label: offers.white_paper.ctaLabel,
-                    href: offers.white_paper.href,
-                },
-                {
-                    label: offers.framework_download.ctaLabel,
-                    href: offers.framework_download.href,
+                    label: offers.assessment.ctaLabel,
+                    href: offers.assessment.href,
                 },
                 {
                     label: offers.strategy_call.ctaLabel,
@@ -100,6 +144,24 @@ export function buildAssistantReply({ message, state, offers }) {
                 },
             ],
             nextState: { ...state, intent: "off_topic", pendingQuestion: null },
+        };
+    }
+
+    if (intent === "assessment") {
+        return {
+            intent,
+            text: `The AI Readiness Assessment is the best starting point. It is a structured evaluation of your organization's readiness — people, processes, data, and infrastructure. Starting at $300, with the full cost credited toward any Heuristic implementation engagement.`,
+            ctas: [
+                {
+                    label: offers.assessment.ctaLabel,
+                    href: offers.assessment.href,
+                },
+                {
+                    label: offers.strategy_call.ctaLabel,
+                    href: offers.strategy_call.href,
+                },
+            ],
+            nextState: { ...state, intent },
         };
     }
 
@@ -163,17 +225,77 @@ export function buildAssistantReply({ message, state, offers }) {
         };
     }
 
+    if (intent === "services") {
+        return {
+            intent,
+            text: `Heuristic offers three core services: AI Readiness Assessment, Data & Governance, and AI Implementation — including agentic systems that complete multi-step workflows autonomously.`,
+            ctas: [
+                { label: "View Services", href: "/services" },
+                {
+                    label: offers.assessment.ctaLabel,
+                    href: offers.assessment.href,
+                },
+            ],
+            nextState: { ...state, intent },
+        };
+    }
+
+    if (intent === "solutions") {
+        return {
+            intent,
+            text: `Heuristic has built several tools available to license: an AI Voice Receptionist, Social Media Content Generator, Real Estate Marketing Tool, and an Agentic System. Each has a demo available.`,
+            ctas: [
+                { label: "View Solutions", href: "/solutions" },
+                {
+                    label: offers.strategy_call.ctaLabel,
+                    href: offers.strategy_call.href,
+                },
+            ],
+            nextState: { ...state, intent },
+        };
+    }
+
+    if (intent === "case_studies") {
+        return {
+            intent,
+            text: `Heuristic has deployed an AI voice receptionist for an IT support company and built a social media automation pipeline for Crafted for Courage. Both are live and running.`,
+            ctas: [
+                { label: "View Case Studies", href: "/case-studies" },
+                {
+                    label: offers.assessment.ctaLabel,
+                    href: offers.assessment.href,
+                },
+            ],
+            nextState: { ...state, intent },
+        };
+    }
+
+    if (intent === "about") {
+        return {
+            intent,
+            text: `Heuristic is led by a technologist with 35 years of engineering and project management experience, with background in regulated, data-sensitive environments. We build what we recommend — our AI receptionist and webchat are both live on this site.`,
+            ctas: [
+                { label: "About Heuristic", href: "/about" },
+                {
+                    label: offers.assessment.ctaLabel,
+                    href: offers.assessment.href,
+                },
+            ],
+            nextState: { ...state, intent },
+        };
+    }
+
     return {
         intent: "general",
-        text: `Heuristic Consulting helps businesses identify where AI automation and systems architecture can create practical value. I can point you to the White Paper, the Framework, or help determine whether a Strategy Call makes sense.`,
+        text: `Heuristic Consulting helps mid-market companies move from AI curiosity to AI capability. The best starting point is usually the AI Readiness Assessment — a structured evaluation of where you stand, starting at $300.`,
         ctas: [
+            {
+                label: offers.assessment.ctaLabel,
+                href: offers.assessment.href,
+            },
             {
                 label: offers.white_paper.ctaLabel,
                 href: offers.white_paper.href,
-            },
-            {
-                label: offers.framework_download.ctaLabel,
-                href: offers.framework_download.href,
             },
             {
                 label: offers.strategy_call.ctaLabel,

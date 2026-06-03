@@ -3,43 +3,59 @@ export const assistantContext = {
   assistantTitle: "AI Readiness Advisor",
 
   description:
-    "Heuristic Consulting helps businesses evaluate where AI automation and systems architecture can create practical value.",
+    "Heuristic Consulting helps mid-market businesses move from AI curiosity to AI capability — starting with an honest assessment of where you stand, and following through to working systems.",
 
   offers: {
+    assessment: {
+      label: "AI Readiness Assessment",
+      summary:
+        "A structured evaluation of your organization's readiness to adopt AI. Starting at $300. Full cost credited toward any Heuristic implementation engagement.",
+      ctaLabel: "Schedule Your Assessment",
+      href: "https://calendly.com/lise-heuristiccc/30min",
+    },
+
     white_paper: {
       label: "White Paper",
       summary:
-        "A practical introduction to AI systems architecture and where automation may create business value.",
-      ctaLabel: "Get the White Paper",
-      href: "#whitepaper", // update later if needed
+        "Controlled AI Automation — a practical framework for production-ready AI systems.",
+      ctaLabel: "Download the White Paper",
+      href: "/assets/AI_Systems_Architecture_White_Paper.pdf",
     },
 
     framework_download: {
-      label: "Framework Download",
+      label: "AI Automation Framework",
       summary:
-        "A structured framework for evaluating AI readiness, use cases, and implementation thinking.",
+        "A 3-minute worksheet to evaluate whether a workflow is a strong candidate for AI automation.",
       ctaLabel: "Download the Framework",
-      href: "/framework-download", // update later if needed
+      href: "/#framework-download",
     },
 
     strategy_call: {
       label: "Strategy Call",
       summary:
-        "A direct conversation to assess objectives, constraints, and where AI automation may fit.",
-      ctaLabel: "Request a Strategy Call",
-      href: "https://calendly.com/lise-heuristiccc/30min", // update later if needed
+        "A direct conversation to assess objectives, constraints, and where AI fits.",
+      ctaLabel: "Schedule a Strategy Call",
+      href: "https://calendly.com/lise-heuristiccc/30min",
     },
+  },
+
+  pages: {
+    services: "/services",
+    solutions: "/solutions",
+    caseStudies: "/case-studies",
+    about: "/about",
+    contact: "/contact",
   },
 
   quickActions: [
     "What does Heuristic Consulting do?",
-    "Should I start with the White Paper or Framework?",
-    "Can AI help my business operations?",
-    "I want a Strategy Call",
+    "What is the AI Readiness Assessment?",
+    "What has Heuristic built?",
+    "I want to schedule a call",
   ],
 
   boundaries: [
-    "Do not invent pricing.",
+    "Do not invent pricing beyond what is stated.",
     "Do not promise guaranteed results.",
     "Do not provide legal or compliance advice.",
     "Do not claim a full business assessment has been completed.",
