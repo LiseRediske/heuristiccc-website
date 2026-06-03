@@ -129,7 +129,7 @@ export function detectIntent(message) {
 export function buildAssistantReply({ message, state, offers }) {
     const intent = detectIntent(message);
 
-    if (!isRelevantBusinessQuery(message)) {
+    if (intent === "general" && !isRelevantBusinessQuery(message)) {
         return {
             intent: "off_topic",
             text: "I am focused on helping visitors understand Heuristic Consulting's services and next steps. I can tell you about our AI Readiness Assessment, what we have built, or help you schedule a call.",
