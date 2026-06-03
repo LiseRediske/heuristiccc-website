@@ -29,6 +29,9 @@ function isRelevantBusinessQuery(message) {
         "llm",
         "assessment",
         "agentic",
+        "what do you do",
+        "heuristic",
+        "do you",
     ];
 
     return relevantTerms.some((term) => text.includes(term));
@@ -45,6 +48,8 @@ export function detectIntent(message) {
         "evaluate",
         "$300",
         "three hundred",
+        "what is the ai readiness",
+        "ai readiness assessment",
     ];
 
     const whitePaperTerms = [
@@ -72,6 +77,8 @@ export function detectIntent(message) {
         "work with you",
         "speak with someone",
         "call",
+        "i want to schedule",
+        "want to schedule",
     ];
 
     const servicesTerms = [
@@ -103,6 +110,9 @@ export function detectIntent(message) {
         "examples",
         "clients",
         "crafted for courage",
+        "what has heuristic built",
+        "heuristic built",
+        "built",
     ];
 
     const aboutTerms = [
