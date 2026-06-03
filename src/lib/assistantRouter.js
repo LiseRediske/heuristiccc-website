@@ -248,7 +248,7 @@ export function buildAssistantReply({ message, state, offers }) {
     if (intent === "services") {
         return {
             intent,
-            text: `Heuristic offers four core services: AI Readiness Assessment, Data & Governance, AI Implementation, and Business AI Education — including live workshops for business teams delivered on-site or virtually.`,
+            text: `Heuristic offers four core services: AI Readiness Assessment, Data & Governance, AI Implementation — including agentic systems that complete multi-step workflows autonomously — and Business AI Education, live workshops for business teams delivered on-site or virtually.`,
             ctas: [
                 { label: "View Services", href: "/services" },
                 {
