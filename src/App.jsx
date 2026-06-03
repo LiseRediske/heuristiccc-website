@@ -24,8 +24,8 @@ export default function App() {
       {/* FOOTER (global — renders below every page) */}
       <footer className="bg-black text-gray-400 text-center py-10 text-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="font-medium text-gray-300">612-404-6281</p>
-          <p className="mt-1">lise@heuristiccc.com</p>
+          <p className="font-medium text-gray-300">855-774-9933</p>
+          <p className="mt-1">info@heuristiccc.com</p>
           <p className="mt-4">
             <a
               href="/privacy"
