@@ -133,8 +133,9 @@ export default function Contact() {
                     className="mt-1 h-5 w-5 shrink-0 cursor-pointer appearance-auto bg-white"
                   />
                   <span>
-                    I agree to receive SMS messages from Heuristic Consulting.
-                    Message and data rates may apply. Reply STOP to opt out. View
+                    I agree to receive SMS messages from Heuristic Consulting
+                    Corporation. Message and data rates may apply. Reply STOP to
+                    opt out. View
                     our{" "}
                     <a
                       href="/terms"
